@@ -64,7 +64,14 @@
 
         audio.currentTime = 0;
         audio.play();
-        key.classList.add("playing");
+        if (key.classList.contains("playing")) {
+          // setTimeout(() => {
+          key.classList.remove("playing");
+          // }, 500);
+          // key.classList.remove("playing");
+        } else {
+          key.classList.add("playing");
+        }
       });
 
       function removeTransition(e) {
