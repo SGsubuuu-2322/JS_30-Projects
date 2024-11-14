@@ -83,6 +83,18 @@
         secondHand.style.transform = `rotate(${secondDegree}deg)`;
         minuteHand.style.transform = `rotate(${minuteDegree}deg)`;
         hourHand.style.transform = `rotate(${hourDegree}deg)`;
+
+        // Remove transition briefly at 0 degrees
+    if (seconds === 0 || minutes === 0 || hours === 0) {
+      secondHand.style.transition = "none";
+      minuteHand.style.transition = "none";
+      hourHand.style.transition = "none";
+    } else {
+      secondHand.style.transition = "all 0.05s";
+      minuteHand.style.transition = "all 0.05s";
+      hourHand.style.transition = "all 0.05s";
+    }
+        console.log(secondDegree)
       };
 
       setInterval(setDate, 1000);
