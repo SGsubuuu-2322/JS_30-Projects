@@ -147,10 +147,12 @@
       const panels = document.querySelectorAll(".panel");
 
       function toggleOpen() {
+        panels.forEach((panel) => panel.classList.remove("open"));
         this.classList.toggle("open");
       }
       function toggleOpenActive(e) {
         if (e.propertyName.includes("flex")) {
+          // panels.forEach((panel) => panel.classList.remove("open-active"));
           this.classList.toggle("open-active");
         }
       }
