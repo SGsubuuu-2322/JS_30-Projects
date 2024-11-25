@@ -1,47 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Console Tricks!</title>
-  <link rel="icon" href="https://fav.farm/🔥" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Console Tricks!</title>
+    <link rel="icon" href="https://fav.farm/🔥" />
+  </head>
+  <body>
+    <p onClick="makeGreen()">×BREAK×DOWN×</p>
 
-  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+    <script>
+      const dogs = [
+        { name: "Snickers", age: 2 },
+        { name: "hugo", age: 8 },
+      ];
 
-  <script>
-    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+      function makeGreen() {
+        const p = document.querySelector("p");
+        p.style.color = "#BADA55";
+        p.style.fontSize = "50px";
+      }
 
-    function makeGreen() {
-      const p = document.querySelector('p');
-      p.style.color = '#BADA55';
-      p.style.fontSize = '50px';
-    }
+      // Regular
+      console.log("Hellooooooooooo.......");
 
-    // Regular
+      // Interpolated
+      console.log("Helloo there!!! Mr./Mrs. %s", "Subham");
 
-    // Interpolated
+      // Styled
+      console.log(
+        "%c I am some great text...",
+        "font-size:50px; background:red; text-shadow: 10px 10px 0 blue"
+      );
 
-    // Styled
+      // warning!
 
-    // warning!
+      console.warn("Ohh Nooo!!! There's some issue...");
 
-    // Error :|
+      // Error :|
+      console.error("Ohh Nooo!!! There's an error...");
 
-    // Info
+      // Info
+      console.info("Crocodile eats 3-4 people per year...");
 
-    // Testing
+      // Testing
+      const p = document.querySelector("p");
+      console.assert(p.classList.contains("ouch"), "That is wrong element...");
 
-    // clearing
+      // clearing
+      // console.clear();
 
-    // Viewing DOM Elements
+      // Viewing DOM Elements
+      console.log(p);
+      console.dir(p);
 
-    // Grouping together
+      // Grouping together
+      // console.clear();
+      dogs.map((dog) => {
+        console.group(`${dog.name}`);
+        console.log(`This is ${dog.name}`);
+        console.log(`${dog.name} is ${dog.age} years old...`);
+        console.groupEnd(`${dog.name}`);
+      });
 
-    // counting
+      // counting
+      console.count("Hello");
+      console.count("Hello");
+      console.count("Hello");
+      console.count("Hii");
+      console.count("Hello");
+      console.count("Hii");
 
-    // timing
+      // timing
+      console.time("Data Fetching...");
+      fetch("https://jsonplaceholder.typicode.com/todos/1")
+        .then((response) => response.json())
+        .then((data) => {
+          console.timeEnd("Data Fetching...");
+          console.log(data);
+        });
 
-  </script>
-</body>
+      console.table(dogs);
+    </script>
+  </body>
 </html>
