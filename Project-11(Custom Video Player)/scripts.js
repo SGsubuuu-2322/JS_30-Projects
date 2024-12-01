@@ -14,7 +14,7 @@ function togglePlay() {
 }
 
 function updateButton() {
-  toggle.textContent = this.paused ? "▶️" : "⏸️";
+  toggle.textContent = this.paused ? "►" : "❚ ❚";
 }
 
 function skips() {
